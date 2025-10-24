@@ -8,6 +8,11 @@ A sleek, feature-rich weather application built with React, TypeScript, and mode
 
 [View Live Demo](#) <!-- Add your deployed URL here -->
 
+
+## 📸 Screenshots<img width="3886" height="2912" alt="localhost_5174_" src="https://github.com/user-attachments/assets/2b591f0e-88b9-4d87-8c02-e066423fea9f" />
+<img width="3886" height="2912" alt="localhost_5174_ (1)" src="https://github.com/user-attachments/assets/2f1f45b8-11ae-470e-8047-1a61230102dd" />
+<img width="3886" height="3232" alt="localhost_5174_ (2)" src="https://github.com/user-attachments/assets/04b2c9ad-f912-4389-a4f2-27900754b77c" />
+
 ## ✨ Features
 
 ### Core Features
@@ -264,42 +269,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [TanStack Query](https://tanstack.com/query) for data fetching
 - [Recharts](https://recharts.org/) for beautiful charts
 
-## 📸 Screenshots
-
-### Desktop View
-![Desktop Dashboard](#) <!-- Add screenshot -->
-
-### Mobile View
-![Mobile View](#) <!-- Add screenshot -->
-
-### Dark Mode
-![Dark Mode](#) <!-- Add screenshot -->
-
----
-
-**⭐ If you found this project helpful, please consider giving it a star!**
-
-Made with ❤️ using React and TypeScript
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
