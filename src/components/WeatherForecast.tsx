@@ -63,7 +63,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
                 <>
                   <div
                     key={day.date}
-                    className="grid grid-cols-3 items-center gap-4 rounded-lg border p-4"
+                    className="grid grid-cols-2 lg:grid-cols-3 items-center gap-4 rounded-lg border p-4"
                   >
                     <div>
                       <p className="font-medium">
@@ -72,7 +72,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
                       <p className="text-sm text-muted-foreground capitalize">
                         {day.weather.description}
                       </p>
-                    </div>
+                    </div>  
 
                     <div className="flex justify-center gap-4">
                         <span className="flex items-center text-blue-500">

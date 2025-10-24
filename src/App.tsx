@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "sonner";
 
 import Layout from "@/components/layout";
 
@@ -20,9 +21,9 @@ function App() {
         staleTime: 1000 * 60 * 5, // 5 minutes - cache time
         getTime: 10 * 60 * 1000, // 10 minutes - garbage collection
         retry: false,
-        refetchOnWindowFocus: false
-      }
-    }
+        refetchOnWindowFocus: false,
+      },
+    },
   });
   window.__TANSTACK_QUERY_CLIENT__ = queryClient;
 
@@ -37,6 +38,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+        <Toaster richColors />
       </QueryClientProvider>
     </ThemeProvider>
   );

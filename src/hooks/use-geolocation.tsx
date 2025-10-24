@@ -43,8 +43,6 @@ export function useGeoLocation() {
 
         // error callback
       (error) => {
-        // Ignore kCLErrorLocationUnknown as per Apple's documentation
-        // The location manager keeps trying and we should wait for a real result
         if (error.code === error.POSITION_UNAVAILABLE && 
             (error.message.includes('kCLErrorLocationUnknown') || 
              error.message.includes('CoreLocationProvider') ||

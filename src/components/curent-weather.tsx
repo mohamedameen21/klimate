@@ -33,23 +33,24 @@ const CurrentWeather = ({ data, location }: CurrentWeatherProps) => {
       <Card className="overflow-hidden">
         <CardContent className="p-6">
           <div className="grid gap-6 md:grid-cols-2">
-
             <div className="space-y-4">
-              <div className="space-y-2">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h2 className="text-2xl font-bold">{location?.name},</h2>
-                    {location?.state && (
-                      <span className="text-muted-foreground">
-                        {location.state}
-                      </span>
-                    )}
+              {location && (
+                <div className="space-y-2">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h2 className="text-2xl font-bold">{location?.name},</h2>
+                      {location?.state && (
+                        <span className="text-muted-foreground">
+                          {location.state}
+                        </span>
+                      )}
+                    </div>
                   </div>
+                  <p className="text-sm text-muted-foreground">
+                    {location?.country}
+                  </p>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  {location?.country}
-                </p>
-              </div>
+              )}
 
               <div className="flex items-center gap-2">
                 <p className="text-7xl font-bold">{formatTemperature(temp)}</p>
@@ -93,11 +94,12 @@ const CurrentWeather = ({ data, location }: CurrentWeatherProps) => {
                   alt={currentWeather.description}
                 />
                 <div className="absolute bottom-0 text-center">
-                    <p className="text-sm font-medium capitalize">{currentWeather.description}</p>
+                  <p className="text-sm font-medium capitalize">
+                    {currentWeather.description}
+                  </p>
                 </div>
               </div>
             </div>
-            
           </div>
         </CardContent>
       </Card>

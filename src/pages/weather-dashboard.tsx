@@ -1,4 +1,4 @@
-import { AlertTriangle, MapPin, RefreshCcw, Terminal } from "lucide-react";
+import { AlertTriangle, MapPin, RefreshCcw } from "lucide-react";
 
 import WeatherSkeleton from "@/components/loading-skeleton";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
@@ -9,6 +9,7 @@ import CurrentWeather from "@/components/curent-weather";
 import HourlyTemperature from "@/components/hourly-temperature";
 import WeatherDetails from "@/components/weather-details";
 import WeatherForecast from "@/components/WeatherForecast";
+import FavoriteCities from "@/components/FavoriteCities";
 
 const WeatherDashboard = () => {
   const { coordinates, error, getLocation, loading } = useGeoLocation();
@@ -77,6 +78,8 @@ const WeatherDashboard = () => {
   return (
     <div className="space-y-4">
       {/* Favourite Cities */}
+      <FavoriteCities/>
+
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-bold tracking-tight">My Location</h1>
         <Button
@@ -90,7 +93,6 @@ const WeatherDashboard = () => {
       </div>
 
       {/* Current and Hourly weather */}
-
       <div className="grid gap-6">
         <div className="flex flex-col lg:flex-row gap-4">
           <CurrentWeather data={weatherQuery.data} location={location} />
