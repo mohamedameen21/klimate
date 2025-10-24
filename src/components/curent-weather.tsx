@@ -1,14 +1,7 @@
 import { ArrowDown, ArrowUp, Droplet, Wind } from "lucide-react";
 
 import type { WeatherData, GeocodeData } from "@/api/types";
-import {
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@//components/ui/card";
+import { CardContent } from "@//components/ui/card";
 
 import { Card } from "./ui/card";
 
@@ -22,9 +15,11 @@ const formatTemperature = (temp: number) => {
 };
 
 const CurrentWeather = ({ data, location }: CurrentWeatherProps) => {
+  if (!data) return null;
+  
   const {
     weather: [currentWeather],
-    main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
+    main: { temp, feels_like, temp_min, temp_max, humidity },
     wind: { speed },
   } = data;
 

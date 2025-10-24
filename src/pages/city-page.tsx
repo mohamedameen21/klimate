@@ -1,5 +1,3 @@
-import React from "react";
-
 import { AlertTriangle } from "lucide-react";
 import { useParams, useSearchParams } from "react-router";
 
@@ -17,8 +15,8 @@ const CityPage = () => {
   const [searchParams] = useSearchParams();
   const params = useParams();
 
-  const lat = parseFloat(searchParams.get("lat") || 0);
-  const lon = parseFloat(searchParams.get("lon") || 0);
+  const lat = parseFloat(searchParams.get("lat") || "0");
+  const lon = parseFloat(searchParams.get("lon") || "0");
 
   const coordinates: Coordinates = { lat, lon };
 
@@ -41,6 +39,10 @@ const CityPage = () => {
     );
   }
 
+  if (!weatherQuery.data || !forecastQuery.data) {
+    return null;
+  }
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
@@ -49,7 +51,7 @@ const CityPage = () => {
         </h1>
         <div>
           {/* favorite button */}
-          <FavoriteButton data={{...weatherQuery.data, name:params.cityName}}/>
+          <FavoriteButton data={{...weatherQuery.data, name: params.cityName || ""}}/>
         </div>
       </div>
 

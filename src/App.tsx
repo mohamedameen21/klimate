@@ -19,7 +19,7 @@ function App() {
     defaultOptions: {
       queries: {
         staleTime: 1000 * 60 * 5, // 5 minutes - cache time
-        getTime: 10 * 60 * 1000, // 10 minutes - garbage collection
+        gcTime: 10 * 60 * 1000, // 10 minutes - garbage collection
         retry: false,
         refetchOnWindowFocus: false,
       },

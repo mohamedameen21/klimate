@@ -46,7 +46,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
     }
 
     return acc;
-  }, {}) as Record<string, DailyForecast>;
+  }, {} as Record<string, DailyForecast>);
 
   const nextDays = Object.values(dailyForcast).slice(0, 6); // Get next 5 days
 

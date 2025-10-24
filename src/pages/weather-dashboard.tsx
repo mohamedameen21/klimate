@@ -52,7 +52,7 @@ const WeatherDashboard = () => {
     );
   }
 
-  const location = locationQuery?.data[0];
+  const location = locationQuery?.data?.[0];
 
   if(weatherQuery.error || forecastQuery.error || locationQuery.error) {
     return (
@@ -73,6 +73,10 @@ const WeatherDashboard = () => {
         </AlertDescription>
       </Alert>
     );
+  }
+
+  if (!weatherQuery.data || !forecastQuery.data) {
+    return null;
   }
 
   return (

@@ -50,7 +50,7 @@ export interface ForecastData {
     list: Array<{
         dt: number;
         main: WeatherData["main"];
-        weather: WeatherCo ndition;
+        weather: WeatherCondition[];
         wind: WeatherData["wind"];
         dt_txt: string;
     }>;

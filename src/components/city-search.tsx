@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { Clock, Loader2, Search, Star, XCircle } from "lucide-react";
+import { Clock, Loader2, Search, Star } from "lucide-react";
 import { CommandSeparator } from "cmdk";
-import { format, formatDate, set } from "date-fns";
+import { formatDate } from "date-fns";
 import { useNavigate } from "react-router";
 
 import {
